@@ -24,6 +24,9 @@ public class ExpenseTrackerModel {
   public void removeTransaction(Transaction t) {
     transactions.remove(t);
   }
+  public void removeTransactionIndex(int index) {
+    transactions.remove(index);
+  }
 
   public List<Transaction> getTransactions() {
     //encapsulation - data integrity

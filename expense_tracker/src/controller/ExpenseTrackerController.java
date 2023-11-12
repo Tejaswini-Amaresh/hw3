@@ -72,4 +72,14 @@ public class ExpenseTrackerController {
       view.toFront();}
 
   }
+  public void deleteSelectedTransaction(int index) {
+    if (index != -1) {
+      int modelIndex = view.getTransactionsTable().convertRowIndexToModel(index);
+      model.removeTransactionIndex(modelIndex);
+      refresh();
+  } else {
+      JOptionPane.showMessageDialog(view, "No transaction selected for undo");
+      view.toFront();
+  }
+}
 }

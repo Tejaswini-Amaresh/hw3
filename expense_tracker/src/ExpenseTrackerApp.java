@@ -67,6 +67,11 @@ public class ExpenseTrackerApp {
     JOptionPane.showMessageDialog(view,exception.getMessage());
     view.toFront();
    }});
+
+   view.addDeleteTransactionListener(e -> {
+    int selectedRow = view.getTransactionsTable().getSelectedRow();
+    controller.deleteSelectedTransaction(selectedRow);
+   });
     
 
   }
