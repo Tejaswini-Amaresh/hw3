@@ -78,8 +78,7 @@ public class ExpenseTrackerController {
       model.removeTransactionIndex(modelIndex);
       refresh();
   } else {
-      JOptionPane.showMessageDialog(view, "No transaction selected for undo");
-      view.toFront();
+      throw new IllegalArgumentException("No transaction selected for undo");
   }
 }
 }

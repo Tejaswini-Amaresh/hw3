@@ -16,7 +16,7 @@ public class ExpenseTrackerApp {
     ExpenseTrackerModel model = new ExpenseTrackerModel();
     ExpenseTrackerView view = new ExpenseTrackerView();
     ExpenseTrackerController controller = new ExpenseTrackerController(model, view);
-    
+  
 
     // Initialize view
     view.setVisible(true);
@@ -69,8 +69,13 @@ public class ExpenseTrackerApp {
    }});
 
    view.addDeleteTransactionListener(e -> {
-    int selectedRow = view.getTransactionsTable().getSelectedRow();
-    controller.deleteSelectedTransaction(selectedRow);
+    try {
+      int selectedRow = view.getTransactionsTable().getSelectedRow();
+      controller.deleteSelectedTransaction(selectedRow);
+    } catch(IllegalArgumentException exception) {
+      JOptionPane.showMessageDialog(view,exception.getMessage());
+      view.toFront();
+    }
    });
     
 
