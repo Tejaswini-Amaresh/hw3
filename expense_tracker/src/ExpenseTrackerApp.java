@@ -68,6 +68,7 @@ public class ExpenseTrackerApp {
     view.toFront();
    }});
 
+   // Add action listener to the "Delete Transaction" button
    view.addDeleteTransactionListener(e -> {
     try {
       int selectedRow = view.getTransactionsTable().getSelectedRow();

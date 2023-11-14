@@ -72,6 +72,12 @@ public class ExpenseTrackerController {
       view.toFront();}
 
   }
+  
+  /**
+   * 
+   * @param index 
+   * row selected for the undo functionality
+   */
   public void deleteSelectedTransaction(int index) {
     if (index != -1) {
       int modelIndex = view.getTransactionsTable().convertRowIndexToModel(index);
