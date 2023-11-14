@@ -51,7 +51,6 @@ public class TestExample {
             model.removeTransaction(transaction);
         }
         controller.refresh();
-        System.out.println("hey");
     }
 
     public double getTotalCost() {
